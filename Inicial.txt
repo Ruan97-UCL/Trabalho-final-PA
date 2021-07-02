@@ -1,7 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <cctype>
 
 using namespace std;
 
@@ -144,19 +142,19 @@ void botaArquivo(tComplexos n){
 
 void leArquivo(){
     ifstream pega;
-    ifstream PORRA;
     tComplexos valor;
     No *i = inicio;
-    string str;
     pega.open("COMPLEXOS.txt", ios::in);
 
       while(i){
         while(pega >> valor.real >> valor.imag){
               insereNoFim(valor);
-         }                         i=i->obterProximo();  
-       }
-     pega.close();
- }
+          }
+            i=i->obterProximo();
+      }
+              pega.close();
+    }
+
 };
   
 int main(){   
@@ -185,13 +183,10 @@ do
            else if(s==1)
            {  
               //lista->~Lista();
-              if(!lista->seVazia()){
               *lista = Lista(n);
               lista->leArquivo();
               lista->imprimirElementos();
-              }
-           }        
-           
+           }
       //lista->imprimirElementos();
    } while (((s!=1)||(s!=2)) && (s!=-1));
 }
