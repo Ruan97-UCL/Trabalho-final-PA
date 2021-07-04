@@ -1,3 +1,4 @@
+//Trabalho Final PA - Ruan Pardinho
 #include <fstream>
 #include <iostream>
 
@@ -117,14 +118,13 @@ public:
 	void leArquivo(Lista* lista) {
 		ifstream pega;
 		tComplexos valor;
-		No *i = lista->inicio;
+		
 		pega.open("COMPLEXOS.txt", ios::in); 
-		//while (i) {
+		
 			while (pega >> valor.real >> valor.imag) {
 				lista->insereNoFim(valor);
 			}
-			//i = i->obterProximo();
-		//}
+			
 		pega.close();
 	 }
 
@@ -155,6 +155,6 @@ int main() {
 			leArquivo(lista);
 			lista->imprimirElementos();
 		}
-		// lista->imprimirElementos();
+		
 	} while (((s != 1) || (s != 2)) && (s != -1));
 }
